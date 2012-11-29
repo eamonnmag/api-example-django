@@ -1,0 +1,431 @@
+/* =============================================================================
+   GENERAL
+   ========================================================================== */
+h1 {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-shadow: 0px 1px 1px white;
+    margin-bottom: 10px;
+}
+h2 {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-shadow: 0px 1px 1px white;
+}
+h3 {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-shadow: 0px 1px 1px white;
+}
+strong {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:200;
+    font-size: 18px;
+    color: #212121;
+}
+iframe {
+    background-image: url("../images/loading.gif");   
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color:white;
+    outline: none;
+    text-decoration:none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+a:visited {
+    color:white;
+}
+
+a:hover {
+    color:#cccccc;
+}
+.darker {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:400;
+}
+
+td {
+    padding: 0px 5px 5px 0;
+}
+.username {
+    float: right;
+    margin-top: -95px;
+    padding-right: 68px;
+    z-index: 100; 
+}
+
+/* =============================================================================
+   STRUCTURE
+   ========================================================================== */
+.section {
+    padding: 10px 0 55px 0;
+}
+.section-line {
+    background:url('../images/section-top.png') no-repeat 0 0;
+    height: 140px;
+    width: 940px;
+    margin: 0 auto -150px auto;
+}
+.block {
+    width: 940px;
+    padding: 0 20px 0 20px;
+    margin: auto;
+}
+.content {
+    clear: both;
+    font-size: 14px;
+    text-shadow: 0px 1px 1px white;
+}
+.content .prettyprint {
+    padding: 15px 15px 0px 10px;
+    background-color: white;
+    font-size: 13px;
+    width: 40%;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.content a {
+    color:black;
+    text-decoration:none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.content h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 18px;
+    text-shadow: 0px 1px 1px white;
+    margin-bottom: 4px;
+}
+
+/* =============================================================================
+   HEADER
+   ========================================================================== */
+#bar {
+    position: relative;
+    top: 5px;
+    height: 115px;
+    width: 100%;
+    background-color: #eeeeee;
+}
+#bar .bar-line {
+    background-color: #d9d9d9;
+    height: 1px;
+    width:100%;
+}
+#bar .bar-shadow {
+    z-index: 2;
+    margin-top: -1px;
+    background:url(../images/top-shadow-top.png) no-repeat 0 0;
+    height: 9px;
+    width: 940px;
+}
+#bar .block {
+    position: relative;
+}
+
+#bar .block #logo {
+    z-index: 4000;
+    top: 0px;
+    background:url(../images/logo.png) no-repeat 0 0;
+    height:118px;
+    width:174px;
+    position: absolute;
+}
+#nav {
+    height: 62px;
+    width: 100%;
+    background:url('../images/navbar-bg.png') repeat-x 0 0;
+    z-index: 3000;
+    position: relative;
+}
+
+.sticky #nav {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+#nav .block {
+    position: relative;
+    padding: 0;
+    -moz-box-shadow: 3px 19px 45px rgba(0,0,0,0.05);
+    -o-box-shadow: 3px 19px 45px rgba(0,0,0,0.05);
+    -ms-box-shadow: 3px 19px 45px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 3px 19px 45px rgba(0,0,0,0.05);
+    box-shadow: 3px 19px 45px rgba(0,0,0,0.05);
+}
+#nav ul {
+    height: 35px;
+    margin: 0 0 0 20px;
+    color: #ffffff;
+    list-style: none;
+    outline: none;
+    position: absolute;
+}
+#nav li {
+    float: left;
+}
+#nav li a {
+    white-space: nowrap;
+    background: rgba(255,255,255,0.01);
+    border: 0;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    padding: 10px 20px 0;
+    text-decoration: none;
+
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+#nav li a:hover {
+    background: #656565;
+    height: 28px;
+    padding: 10px 20px 0;
+    z-index: 11;
+}
+#nav a:active {
+    color: #999;
+}
+#nav a:focus {
+    outline: 0;
+}
+#nav li.selected a,
+#nav li a.selected {
+    color: white;
+    z-index: 11;
+    background: transparent url('../images/selected_menu.png') no-repeat 50% 0%;
+    height: 28px;
+    padding: 10px 20px 0;
+
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    transition: none !important;
+}
+
+/* =============================================================================
+   COLUMN FORMATTING (ONE, TWO, AND THREE COLUMN LAYOUT)
+   ========================================================================== */
+.cols {
+    margin: auto;
+    width: 100%;
+}
+.cols.two .col {
+    width: 48%;
+}
+.cols.two .col.left {
+    float: left; 
+    padding-right: 4%;
+}
+.cols.two .col.right {
+    float: right; 
+}
+.cols.two.demo .col {
+    float: left;
+    width: 150px;
+    padding: 0 25px 0 0;
+}
+.cols.two h1.snphead {
+    margin-left: 6px;
+}
+.cols.three .col {
+    float: left;
+    width: 295px;
+    padding: 0 25px 0 0;
+}
+.cols.two.demo .col.right {
+    padding: 0;
+    width: 700px;
+}
+.cols.two .col.right .snpdesc {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.cols.two .col.right .snpdesc .chosensnp {
+    display: inline;
+}
+.cols.two .col.right .snpdesc .chosendesc {
+    display: inline;
+}
+
+.cols.two .col.right .ttarea {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.cols.two .col.right .ttarea .ttcontent {
+    padding: 0;
+    margin: 0;
+}
+.cols.two .col.right .ttarea .ttcontent p {
+    padding-top: 0px;
+    margin: 0;
+}
+
+.cols.two .col.right .sarea {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.cols.three .col.right {
+    padding: 0;
+}
+.cols .col p {
+    color: #616161;
+}
+
+/* =============================================================================
+   SNP LIST
+   ========================================================================== */
+.cols ul.snplist {
+    list-style: none;
+    outline: none;
+    margin:0;
+    padding: 0;
+}
+.cols ul li.desc {
+    display: none;
+}
+.cols ul.snplist li {
+    cursor: pointer;
+    margin: 7px 0 7px 0;
+    line-height: 130%;
+}
+.cols ul.snplist li:hover {
+    margin-left: 0px;
+    background-color: #eaeaea;
+}
+.cols ul.snplist li.snp {
+    margin-left: 10px;
+}
+.cols ul.snplist li p:hover {
+    color:#0f0f0f;
+}
+
+/* ========================================================================
+   FOOTER
+   ========================================================================== */
+#footer {
+    height: 100px;
+}
+
+/* ========================================================================
+   404
+   ========================================================================== */
+#pagenotfound {
+    width: 100%;
+    text-align: center;
+
+}
+#pagenotfound .sighface {
+    margin: auto;
+    height: 405px;
+    width: 390px;
+    background: transparent url(../images/sigh-face.png) no-repeat 0 0;
+}
+#pagenotfound h1 {
+    font-size: 42px;
+    margin: 30px 0 20px 0;
+}
+#pagenotfound p {
+    margin: 30px 0 0 0;
+}
+
+/* ========================================================================
+   TABS
+   ========================================================================== */
+#tabs {
+    display: none;
+}
+#tabs h1 {
+    float: left;    
+}
+#tabs ul {
+    margin: 17px 0 0 -24px;
+    float: left;
+}
+#tabs li {
+    list-style: none;
+}
+* html #tabs li {
+    display: inline;
+}
+#tabs li, #tabs li a {
+    float: left;
+    font-size: 80%;
+}
+#tabs ul li.active {
+    background: #FFFFCC;
+}
+#tabs ul li.active a {
+    color: black;
+}
+#tabs div {
+    clear: both;
+    min-height: 50px;
+}
+
+#tabs ul li a {
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+}
