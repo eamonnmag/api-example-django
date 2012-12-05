@@ -8,30 +8,26 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # 23andMe API
-
-# TODO: your client key
+# TODO: Make these equal to what's in your dev dashboard at
+# http://api.23andme.com/dev/
 CLIENT_ID = ""
-
-# TODO: your client secret
 CLIENT_SECRET = ""
-
-
+CALLBACK_URL = ""
 
 # uncomment this database config to run the app using the Django dev server
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': '%s/database.db' % PROJECT_ROOT,                      # Or path to database file if using sqlite3.
-#        'USER': '',                      # Not used with sqlite3.
-#        'PASSWORD': '',                  # Not used with sqlite3.
-#        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-#        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '%s/database.db' % PROJECT_ROOT,                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.  'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
-# database configuration for Heroku
-import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+##database configuration for Heroku
+#import dj_database_url
+#DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -103,8 +99,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '&4@5)fp#urujj3^n9!(lf%i3xx_)5^6ij4q2byz2=73vq*v4fh'
+# TODO Make this unique, and don't share it with anybody.
+SECRET_KEY = ""
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -120,7 +116,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
-
 
 TEMPLATE_CONTEXT_PROCESSORS = [
     "django.contrib.auth.context_processors.auth",

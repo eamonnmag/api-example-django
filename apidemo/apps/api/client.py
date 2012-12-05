@@ -1,29 +1,26 @@
 import requests
 # Get the token using a POST request and a code
 
-# TODO replace with your own callback URL, this will receive the authorization_code as ?code=1234
-CALLBACK_URL = 'http://snpedia-demo-23andme.herokuapp.com/auth/callback/'
-
 import settings
 
 SCOPE = "basic names rs53576 rs1815739 rs6152 rs1800497 rs1805007 rs9939609 rs662799 rs7495174 rs7903146 rs12255372 rs1799971 rs17822931 rs4680 rs1333049 rs1801133 rs1051730 rs3750344 rs4988235"
 
 # leave these alone
 BASE_URL = "https://api.23andme.com/1/"
-LOGIN_URL = "https://api.23andme.com/authorize/?redirect_uri=%s&response_type=code&client_id=%s&scope=%s" % (CALLBACK_URL, settings.CLIENT_ID, SCOPE)
+LOGIN_URL = "https://api.23andme.com/authorize/?redirect_uri=%s&response_type=code&client_id=%s&scope=%s" % (settings.CALLBACK_URL, settings.CLIENT_ID, SCOPE)
 OAUTH_KEY = "access_token"
 
 class OAuthClient(object):
     def __init__(self, access_token=None):
         self.access_token = access_token
-            
+
     def get_token(self, authorization_code):
         parameters = {
             'client_id': settings.CLIENT_ID,
             'client_secret': settings.CLIENT_SECRET,
             'grant_type': 'authorization_code',
             'code': authorization_code, # the authorization code obtained above
-            'redirect_uri': CALLBACK_URL,
+            'redirect_uri': settings.CALLBACK_URL,
             'scope': SCOPE,
         }
         response = requests.post(
@@ -35,7 +32,7 @@ class OAuthClient(object):
         if response.status_code == 200:
             return (response.json['access_token'], response.json['refresh_token'])
         else:
-            response.raise_for_status() 
+            response.raise_for_status()
 
     def refresh_token(self, refresh_token):
         parameters = {
@@ -43,7 +40,7 @@ class OAuthClient(object):
             'client_secret': settings.CLIENT_SECRET,
             'grant_type': 'refresh_token',
             'refresh_token': refresh_token,
-            'redirect_uri': CALLBACK_URL,
+            'redirect_uri': settings.CALLBACK_URL,
             'scope': SCOPE,
         }
         response = requests.post(
@@ -56,7 +53,7 @@ class OAuthClient(object):
             self.access_token = response.json['access_token']
             return (response.json['access_token'], response.json['refresh_token'])
         else:
-            response.raise_for_status() 
+            response.raise_for_status()
 
     def _get_resource(self, resource):
 	if self.access_token is None:
@@ -76,7 +73,7 @@ class OAuthClient(object):
         if response.status_code == 200:
             return response.text
         else:
-            response.raise_for_status() 
+            response.raise_for_status()
 
     def get_user(self):
         return self._get_resource("user/")
@@ -88,4 +85,4 @@ class OAuthClient(object):
         return self._get_resource("profiles/")
 
     def get_genotype(self, locations):
-        return self._get_resource("genotype/?locations=%s" % locations)
+        return self._get_resource("genotypes/?locations=%s" % locations)

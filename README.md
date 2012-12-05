@@ -16,10 +16,7 @@ Install the required packages with ```pip```:
 
 ```pip install -r requirements.txt```
 
-Change ```CLIENT_ID``` and ```CLIENT_SECRET``` in ```apidemo/settings.py```,
-to match your dev credentials from http://api.23andme.com/dev/.
-
-Uncomment the ```DATABASES = {...}``` block to enable sqlite sessions.
+Change ```CLIENT_ID, CLIENT_SECRET, and CALLBACK_URL``` in ```apidemo/settings.py```, to match your dev credentials from http://api.23andme.com/dev/.  I changed my ```CALLBACK_URL``` to ```http://localhost:8000/auth/callback/``` because that's where I run the local Django server.
 
 Change ```SECRET_KEY``` to something unique.
 
