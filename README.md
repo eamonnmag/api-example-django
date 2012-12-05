@@ -5,7 +5,7 @@ This is a Django app built on the 23andMe API, that also pulls in data from
 SNPedia.
 
 Clone the repo:
-```git clone git@github.com:23andMe/api-example-django.git
+```git clone git@github.com:23andMe/api-example-django.git```
 
 Go into the directory, and setup a virtual environment with python:
 ```cd api-example-django && virtualenv . --no-site-packages```
