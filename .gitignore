@@ -5,6 +5,9 @@ lib/
 local/
 include/
 
+# Django dev database
+database.db
+
 # Packages
 *.egg
 *.egg-info
